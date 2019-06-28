@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {HeaderWrapper,Logo,Nav,NavItem,Search,Container,Register,CodeArticle} from "./style"
 import {connect} from "react-redux"
+import * as actionCreators from "./store/actionCreator"
 class Header extends Component{
 	constructor(props){
 		super(props)
@@ -15,7 +16,7 @@ class Header extends Component{
 					<NavItem className="left"> 首页</NavItem>
 					<NavItem className="left"> 下载</NavItem>
 
-					<Search onFocus={this.props.handleFocus} focus={this.props.focused}/>
+					<Search onFocus={this.props.handleFocus} focus={this.props.focused} onBlur={this.props.handleBlur}/>
 					<NavItem className="right"> 登录</NavItem>
 					<NavItem className="right"> Aa</NavItem>
 					
@@ -31,10 +32,11 @@ class Header extends Component{
 const mapDispatchToProps=(dispatch)=>{
 	return {
 		handleFocus(){
-			const action={
-			type:"input_focus"
-			}
+			const action=actionCreators.searchFocus();
 			dispatch(action)
+		},
+		handleBlur(){
+			dispatch(actionCreators.searchBlur())
 		}
 		
 	}
@@ -42,7 +44,7 @@ const mapDispatchToProps=(dispatch)=>{
 
 const mapStateToProps=(state)=>{
 	return{
-		focused:state.focused
+		focused:state.get('header').get('focused')
 	} 
 }
 
