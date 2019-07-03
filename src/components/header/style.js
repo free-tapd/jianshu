@@ -98,3 +98,40 @@ export const CodeArticle=styled.div`
     top:0;
 
 `
+export const SearchBox=styled.div`
+    min-width:200px;
+    display:inline-block;
+    position:relative;
+`
+export const SearchInfo=styled.div`
+    height:200px;
+    width:250px;
+    border-radius:5px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    box-sizing:border-box;
+    padding:15px;
+    overflow:auto;
+`
+
+export const TagSearch=styled.span`
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #787878;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom:5px;
+    &:not(:first-child){
+        margin-left:5px;
+    }
+`
+export const HotSearch=styled.div`
+    float: left;
+    font-size: 14px;
+    color: #969696;
+    line-height:1;
+    &.right{
+        float:right;
+    }
+`
