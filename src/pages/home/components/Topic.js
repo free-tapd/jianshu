@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react'
 import {connect} from "react-redux"
+import {TopicWapper} from "../style"
  class Topic extends PureComponent{
     render(){
         return (
-            <div>
+            <TopicWapper>
                 {
                     this.props.list.map((v,i)=>(
                         <span key={i}>{v.get('title')}</span>
                     )
                 )
                 }
-            </div>
+            </TopicWapper>
         )
     }
 }

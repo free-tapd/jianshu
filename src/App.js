@@ -16,13 +16,14 @@ function App() {
 	   
 	    {
 	    <Router>
-  		<ul>
-	      <li><Link to="/">主页</Link></li>
-	      <li><Link to="/detail">热门</Link></li>
-	     
-	    </ul>
-
-	    <div>
+      {
+    		// <ul>
+  	   //    <li><Link to="/">主页</Link></li>
+  	   //    <li><Link to="/detail">热门</Link></li>
+  	     
+  	   //  </ul>
+    }
+	    <div className="container">
 	      	<Route  exact path="/" component={Home}></Route>
     		<Route path="/detail" component={Detail} ></Route>
     		</div>

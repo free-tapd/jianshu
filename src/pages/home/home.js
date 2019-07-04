@@ -1,7 +1,8 @@
 import React,{PureComponent} from "react"
-import {HomeLeft} from "./style"
+import {HomeLeft,HomeWarpper} from "./style"
 import Topic from "./components/Topic"
 import List from "./components/List"
+import SliderImg from "./components/SliderImg"
 import axios from "axios"
 import {connect} from "react-redux"
 class Home extends PureComponent{
@@ -17,15 +18,14 @@ class Home extends PureComponent{
 		})
 	}
 	render(){
-		return(<div> 
-
+		return(<HomeWarpper> 
+			<SliderImg/>
 			<HomeLeft>
-				hahah
-				
+							
 			</HomeLeft>
 			<Topic></Topic>
 			<List></List>
-		</div> )
+		</HomeWarpper> )
 	}
 }
 const mapDispatch=(dispatch)=>({
